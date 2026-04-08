@@ -95,6 +95,17 @@ docs: update CLAUDE.md with project structure
 - Keep changes focused and minimal — one concern per commit when practical
 - After significant changes, update this CLAUDE.md if the project structure or conventions have changed
 
+### Persistent Memory (claude-mem)
+
+This environment has [claude-mem](https://github.com/thedotmack/claude-mem) installed — a persistent memory plugin for Claude Code that captures tool usage observations and injects relevant context into future sessions.
+
+- Installed via: `npx claude-mem install` (version 12.0.1)
+- Plugin location: `~/.claude/plugins/marketplaces/thedotmack/`
+- Settings: `~/.claude-mem/settings.json`
+- Worker API / viewer UI: `http://localhost:37777` (start with `npx claude-mem start`)
+- Search past work: use `/mem-search` in Claude Code
+- Memory is automatic — no manual intervention required
+
 ---
 
 ## Updating This File
