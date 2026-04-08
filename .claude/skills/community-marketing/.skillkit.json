@@ -1,0 +1,9 @@
+{
+  "name": "community-marketing",
+  "description": "",
+  "source": ".agents/marketingskills",
+  "sourceType": "local",
+  "subpath": "community-marketing",
+  "installedAt": "2026-04-08T20:17:01.488Z",
+  "enabled": true
+}

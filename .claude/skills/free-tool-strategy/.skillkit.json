@@ -1,0 +1,9 @@
+{
+  "name": "free-tool-strategy",
+  "description": "",
+  "source": ".agents/marketingskills",
+  "sourceType": "local",
+  "subpath": "free-tool-strategy",
+  "installedAt": "2026-04-08T20:17:01.493Z",
+  "enabled": true
+}

@@ -1,0 +1,9 @@
+{
+  "name": "product-marketing-context",
+  "description": "",
+  "source": ".agents/marketingskills",
+  "sourceType": "local",
+  "subpath": "product-marketing-context",
+  "installedAt": "2026-04-08T20:17:01.497Z",
+  "enabled": true
+}

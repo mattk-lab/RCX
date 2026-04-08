@@ -1,0 +1,9 @@
+{
+  "name": "sales-enablement",
+  "description": "",
+  "source": ".agents/marketingskills",
+  "sourceType": "local",
+  "subpath": "sales-enablement",
+  "installedAt": "2026-04-08T20:17:01.498Z",
+  "enabled": true
+}

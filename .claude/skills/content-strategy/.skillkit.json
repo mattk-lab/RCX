@@ -1,0 +1,9 @@
+{
+  "name": "content-strategy",
+  "description": "",
+  "source": ".agents/marketingskills",
+  "sourceType": "local",
+  "subpath": "content-strategy",
+  "installedAt": "2026-04-08T20:17:01.489Z",
+  "enabled": true
+}

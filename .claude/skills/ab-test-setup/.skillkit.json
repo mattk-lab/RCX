@@ -1,0 +1,9 @@
+{
+  "name": "ab-test-setup",
+  "description": "",
+  "source": ".agents/marketingskills",
+  "sourceType": "local",
+  "subpath": "ab-test-setup",
+  "installedAt": "2026-04-08T20:17:01.483Z",
+  "enabled": true
+}

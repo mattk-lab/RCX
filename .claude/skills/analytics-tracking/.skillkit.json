@@ -1,0 +1,9 @@
+{
+  "name": "analytics-tracking",
+  "description": "",
+  "source": ".agents/marketingskills",
+  "sourceType": "local",
+  "subpath": "analytics-tracking",
+  "installedAt": "2026-04-08T20:17:01.486Z",
+  "enabled": true
+}

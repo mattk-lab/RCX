@@ -1,0 +1,9 @@
+{
+  "name": "launch-strategy",
+  "description": "",
+  "source": ".agents/marketingskills",
+  "sourceType": "local",
+  "subpath": "launch-strategy",
+  "installedAt": "2026-04-08T20:17:01.493Z",
+  "enabled": true
+}

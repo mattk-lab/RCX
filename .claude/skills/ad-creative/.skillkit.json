@@ -1,0 +1,9 @@
+{
+  "name": "ad-creative",
+  "description": "",
+  "source": ".agents/marketingskills",
+  "sourceType": "local",
+  "subpath": "ad-creative",
+  "installedAt": "2026-04-08T20:17:01.485Z",
+  "enabled": true
+}

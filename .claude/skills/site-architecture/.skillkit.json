@@ -1,0 +1,9 @@
+{
+  "name": "site-architecture",
+  "description": "",
+  "source": ".agents/marketingskills",
+  "sourceType": "local",
+  "subpath": "site-architecture",
+  "installedAt": "2026-04-08T20:17:01.500Z",
+  "enabled": true
+}

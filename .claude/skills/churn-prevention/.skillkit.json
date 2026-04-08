@@ -1,0 +1,9 @@
+{
+  "name": "churn-prevention",
+  "description": "",
+  "source": ".agents/marketingskills",
+  "sourceType": "local",
+  "subpath": "churn-prevention",
+  "installedAt": "2026-04-08T20:17:01.487Z",
+  "enabled": true
+}

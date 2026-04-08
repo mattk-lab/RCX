@@ -1,0 +1,9 @@
+{
+  "name": "competitor-alternatives",
+  "description": "",
+  "source": ".agents/marketingskills",
+  "sourceType": "local",
+  "subpath": "competitor-alternatives",
+  "installedAt": "2026-04-08T20:17:01.489Z",
+  "enabled": true
+}

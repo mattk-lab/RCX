@@ -1,0 +1,9 @@
+{
+  "name": "onboarding-cro",
+  "description": "",
+  "source": ".agents/marketingskills",
+  "sourceType": "local",
+  "subpath": "onboarding-cro",
+  "installedAt": "2026-04-08T20:17:01.495Z",
+  "enabled": true
+}

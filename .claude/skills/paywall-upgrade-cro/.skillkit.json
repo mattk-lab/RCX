@@ -1,0 +1,9 @@
+{
+  "name": "paywall-upgrade-cro",
+  "description": "",
+  "source": ".agents/marketingskills",
+  "sourceType": "local",
+  "subpath": "paywall-upgrade-cro",
+  "installedAt": "2026-04-08T20:17:01.496Z",
+  "enabled": true
+}

@@ -1,0 +1,9 @@
+{
+  "name": "cold-email",
+  "description": "",
+  "source": ".agents/marketingskills",
+  "sourceType": "local",
+  "subpath": "cold-email",
+  "installedAt": "2026-04-08T20:17:01.487Z",
+  "enabled": true
+}

@@ -1,0 +1,9 @@
+{
+  "name": "marketing-ideas",
+  "description": "",
+  "source": ".agents/marketingskills",
+  "sourceType": "local",
+  "subpath": "marketing-ideas",
+  "installedAt": "2026-04-08T20:17:01.494Z",
+  "enabled": true
+}

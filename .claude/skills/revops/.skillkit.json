@@ -1,0 +1,9 @@
+{
+  "name": "revops",
+  "description": "",
+  "source": ".agents/marketingskills",
+  "sourceType": "local",
+  "subpath": "revops",
+  "installedAt": "2026-04-08T20:17:01.498Z",
+  "enabled": true
+}

@@ -1,0 +1,9 @@
+{
+  "name": "copy-editing",
+  "description": "",
+  "source": ".agents/marketingskills",
+  "sourceType": "local",
+  "subpath": "copy-editing",
+  "installedAt": "2026-04-08T20:17:01.490Z",
+  "enabled": true
+}

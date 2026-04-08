@@ -1,0 +1,9 @@
+{
+  "name": "customer-research",
+  "description": "",
+  "source": ".agents/marketingskills",
+  "sourceType": "local",
+  "subpath": "customer-research",
+  "installedAt": "2026-04-08T20:17:01.491Z",
+  "enabled": true
+}

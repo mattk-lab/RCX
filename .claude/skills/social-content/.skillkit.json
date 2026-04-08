@@ -1,0 +1,9 @@
+{
+  "name": "social-content",
+  "description": "",
+  "source": ".agents/marketingskills",
+  "sourceType": "local",
+  "subpath": "social-content",
+  "installedAt": "2026-04-08T20:17:01.500Z",
+  "enabled": true
+}

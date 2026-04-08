@@ -1,0 +1,9 @@
+{
+  "name": "email-sequence",
+  "description": "",
+  "source": ".agents/marketingskills",
+  "sourceType": "local",
+  "subpath": "email-sequence",
+  "installedAt": "2026-04-08T20:17:01.492Z",
+  "enabled": true
+}

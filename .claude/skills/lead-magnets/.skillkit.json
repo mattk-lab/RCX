@@ -1,0 +1,9 @@
+{
+  "name": "lead-magnets",
+  "description": "",
+  "source": ".agents/marketingskills",
+  "sourceType": "local",
+  "subpath": "lead-magnets",
+  "installedAt": "2026-04-08T20:17:01.494Z",
+  "enabled": true
+}
