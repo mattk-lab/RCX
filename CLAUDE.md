@@ -4,9 +4,38 @@ This file provides guidance to AI assistants (Claude and others) working in this
 
 ## Repository Overview
 
-**RCX** is a fresh repository with no initial codebase. This CLAUDE.md serves as the foundation for development conventions, workflows, and guidelines that should be followed as the project is built out.
+**RCX** is a Node.js/Express user authentication service using JWT.
 
-> When the project is initialized with a specific technology stack, update this file to reflect the actual structure, tooling, and conventions.
+### Tech Stack
+- **Runtime**: Node.js
+- **Framework**: Express
+- **Auth**: JWT (`jsonwebtoken`), bcrypt for password hashing
+- **Testing**: Jest + Supertest
+
+### Project Structure
+```
+src/
+  app.js                  # Express app entry point
+  routes/auth.js          # POST /auth/register, POST /auth/login
+  middleware/authenticate.js  # Bearer token JWT verification
+  services/userService.js # In-memory user store (createUser, verifyCredentials)
+  utils/jwt.js            # sign/verify helpers
+tests/
+  auth.test.js            # Integration tests for all auth endpoints
+```
+
+### Environment Variables
+See `.env.example`. Required:
+- `JWT_SECRET` — signing secret for JWTs
+- `PORT` — server port (default 3000)
+
+### Running
+```
+npm install
+npm start       # production
+npm run dev     # watch mode
+npm test        # run tests
+```
 
 ---
 
