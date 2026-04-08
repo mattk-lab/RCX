@@ -1,8 +1,15 @@
 process.env.JWT_SECRET = 'test-secret-at-least-32-chars-long!!';
 
+const jwt = require('jsonwebtoken');
 const request = require('supertest');
 const app = require('../src/app');
 const userStore = require('../src/auth/userStore');
+
+const SECRET = process.env.JWT_SECRET;
+
+function makeToken(payload, opts = {}) {
+  return jwt.sign(payload, SECRET, { algorithm: 'HS256', ...opts });
+}
 
 beforeEach(() => userStore._clear());
 
@@ -29,7 +36,6 @@ describe('POST /auth/register', () => {
       .post('/auth/register')
       .send({ email: 'carol@example.com', password: 'password123' });
 
-    // Second register with same email must not reveal the duplicate
     const res = await request(app)
       .post('/auth/register')
       .send({ email: 'carol@example.com', password: 'password456' });
@@ -111,15 +117,156 @@ describe('GET /me', () => {
     expect(res.body.email).toBe('eve@example.com');
   });
 
-  it('rejects missing token', async () => {
+  it('rejects missing token with missing_token error', async () => {
     const res = await request(app).get('/me');
     expect(res.status).toBe(401);
+    expect(res.body.error).toBe('missing_token');
   });
 
-  it('rejects malformed token', async () => {
+  it('rejects malformed token with invalid_token error', async () => {
     const res = await request(app)
       .get('/me')
       .set('Authorization', 'Bearer not.a.token');
     expect(res.status).toBe(401);
+    expect(res.body.error).toBe('invalid_token');
+  });
+
+  it('rejects expired token with expired_token error', async () => {
+    const expiredToken = makeToken(
+      { sub: 'user-id', email: 'eve@example.com', roles: ['user'] },
+      { expiresIn: -1 }
+    );
+    const res = await request(app)
+      .get('/me')
+      .set('Authorization', `Bearer ${expiredToken}`);
+    expect(res.status).toBe(401);
+    expect(res.body.error).toBe('expired_token');
+  });
+
+  it('rejects token signed with wrong algorithm (RS256 confusion) with invalid_token', async () => {
+    // Craft a token that claims HS256 but is signed with a different secret
+    const wrongToken = jwt.sign(
+      { sub: 'user-id', email: 'eve@example.com', roles: ['user'] },
+      'wrong-secret',
+      { algorithm: 'HS256' }
+    );
+    const res = await request(app)
+      .get('/me')
+      .set('Authorization', `Bearer ${wrongToken}`);
+    expect(res.status).toBe(401);
+    expect(res.body.error).toBe('invalid_token');
+  });
+
+  it('rejects token with bad signature with invalid_token', async () => {
+    const parts = token.split('.');
+    // Corrupt the signature
+    const badToken = `${parts[0]}.${parts[1]}.invalidsignature`;
+    const res = await request(app)
+      .get('/me')
+      .set('Authorization', `Bearer ${badToken}`);
+    expect(res.status).toBe(401);
+    expect(res.body.error).toBe('invalid_token');
+  });
+
+  it('drops unknown fields from req.user (only sub, email, roles exposed)', async () => {
+    const tokenWithExtra = makeToken({
+      sub: 'user-id',
+      email: 'eve@example.com',
+      roles: ['user'],
+      internalField: 'secret',
+    });
+    const res = await request(app)
+      .get('/me')
+      .set('Authorization', `Bearer ${tokenWithExtra}`);
+    expect(res.status).toBe(200);
+    // /me only returns sub and email — internalField must not appear
+    expect(res.body.internalField).toBeUndefined();
+  });
+});
+
+describe('GET /admin — requireRole', () => {
+  let userToken;
+  let adminToken;
+
+  beforeEach(() => {
+    userToken = makeToken({ sub: 'u1', email: 'user@example.com', roles: ['user'] });
+    adminToken = makeToken({ sub: 'u2', email: 'admin@example.com', roles: ['admin'] });
+  });
+
+  it('allows request when token has matching role', async () => {
+    const res = await request(app)
+      .get('/admin')
+      .set('Authorization', `Bearer ${adminToken}`);
+    expect(res.status).toBe(200);
+  });
+
+  it('returns 403 when token lacks required role', async () => {
+    const res = await request(app)
+      .get('/admin')
+      .set('Authorization', `Bearer ${userToken}`);
+    expect(res.status).toBe(403);
+    expect(res.body.error).toBe('forbidden');
+  });
+
+  it('returns 401 when no token is provided', async () => {
+    const res = await request(app).get('/admin');
+    expect(res.status).toBe(401);
+  });
+});
+
+describe('GET /public — optionalAuth', () => {
+  it('sets req.user to null when no token is provided', async () => {
+    const res = await request(app).get('/public');
+    expect(res.status).toBe(200);
+    expect(res.body.user).toBeNull();
+  });
+
+  it('populates req.user when a valid token is provided', async () => {
+    const token = makeToken({ sub: 'u1', email: 'alice@example.com', roles: ['user'] });
+    const res = await request(app)
+      .get('/public')
+      .set('Authorization', `Bearer ${token}`);
+    expect(res.status).toBe(200);
+    expect(res.body.user).toMatchObject({ email: 'alice@example.com' });
+  });
+
+  it('returns 401 for an invalid token', async () => {
+    const res = await request(app)
+      .get('/public')
+      .set('Authorization', 'Bearer bad.token.here');
+    expect(res.status).toBe(401);
+    expect(res.body.error).toBe('invalid_token');
+  });
+});
+
+describe('POST /auth/login — rate limiting', () => {
+  // Use a fresh supertest agent per request to simulate distinct requests
+  // The rate limiter counts by IP; supertest uses 127.0.0.1 consistently
+
+  beforeEach(async () => {
+    // Register a user so valid login attempts can proceed
+    await request(app)
+      .post('/auth/register')
+      .send({ email: 'rl@example.com', password: 'password123' });
+  });
+
+  it('allows up to 5 requests and blocks the 6th with 429 + Retry-After', async () => {
+    // Send 5 requests (each will succeed or fail with 401 — both count)
+    for (let i = 0; i < 5; i++) {
+      await request(app)
+        .post('/auth/login')
+        .set('X-Forwarded-For', '10.0.0.1')
+        .send({ email: 'rl@example.com', password: 'password123' });
+    }
+
+    // 6th request must be blocked
+    const res = await request(app)
+      .post('/auth/login')
+      .set('X-Forwarded-For', '10.0.0.1')
+      .send({ email: 'rl@example.com', password: 'password123' });
+
+    expect(res.status).toBe(429);
+    expect(res.body.error).toBe('too_many_requests');
+    expect(res.headers['retry-after']).toBeDefined();
   });
 });

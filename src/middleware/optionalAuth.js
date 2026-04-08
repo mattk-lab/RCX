@@ -1,15 +1,14 @@
 const jwt = require('jsonwebtoken');
 const { verify } = require('../auth/tokens');
+const authenticate = require('./authenticate');
 
-function classifyJwtError(err) {
-  if (err instanceof jwt.TokenExpiredError) return 'expired_token';
-  return 'invalid_token';
-}
+const { classifyJwtError } = authenticate;
 
-function authenticate(req, res, next) {
+function optionalAuth(req, res, next) {
   const authHeader = req.headers.authorization;
   if (!authHeader?.startsWith('Bearer ')) {
-    return res.status(401).json({ error: 'missing_token' });
+    req.user = null;
+    return next();
   }
 
   const token = authHeader.slice(7);
@@ -23,5 +22,4 @@ function authenticate(req, res, next) {
   }
 }
 
-authenticate.classifyJwtError = classifyJwtError;
-module.exports = authenticate;
+module.exports = optionalAuth;

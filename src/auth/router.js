@@ -1,5 +1,6 @@
 const express = require('express');
 const bcrypt = require('bcryptjs');
+const rateLimit = require('express-rate-limit');
 const userStore = require('./userStore');
 const { sign } = require('./tokens');
 
@@ -8,6 +9,16 @@ const BCRYPT_ROUNDS = 12;
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 // bcrypt silently truncates at 72 bytes; cap input to avoid misleading behaviour
 const PASSWORD_MAX = 72;
+
+const loginLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 5,
+  standardHeaders: true,
+  legacyHeaders: false,
+  handler: (_req, res) => {
+    res.status(429).json({ error: 'too_many_requests' });
+  },
+});
 
 router.post('/register', async (req, res) => {
   const { email, password } = req.body ?? {};
@@ -31,15 +42,15 @@ router.post('/register', async (req, res) => {
 
   if (!userStore.exists(email)) {
     const user = userStore.create({ email, passwordHash });
-    const token = sign({ sub: user.id, email: user.email });
+    const token = sign({ sub: user.id, email: user.email, roles: ['user'] });
     return res.status(201).json({ token });
   }
 
   // Simulate work for the duplicate path so timing is indistinguishable
-  return res.status(201).json({ token: sign({ sub: 'placeholder', email: email.toLowerCase() }) });
+  return res.status(201).json({ token: sign({ sub: 'placeholder', email: email.toLowerCase(), roles: ['user'] }) });
 });
 
-router.post('/login', async (req, res) => {
+router.post('/login', loginLimiter, async (req, res) => {
   const { email, password } = req.body ?? {};
 
   if (!email || !password) {
@@ -61,7 +72,7 @@ router.post('/login', async (req, res) => {
     return res.status(401).json({ error: 'invalid credentials' });
   }
 
-  const token = sign({ sub: user.id, email: user.email });
+  const token = sign({ sub: user.id, email: user.email, roles: ['user'] });
   return res.json({ token });
 });
 
