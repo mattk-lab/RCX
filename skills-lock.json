@@ -1,0 +1,335 @@
+{
+  "version": 1,
+  "skills": {
+    "code-review:review-local-changes": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "966a78d984f4e0c88ae8cc43b9251711dcb53cc2501588ccc7c8de1adcdf9e0c"
+    },
+    "code-review:review-pr": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "98d6b8ec6f8abb67009eb6b5d9de0b5a1fe1e427cee6d8da1dc44e3f57e7a68a"
+    },
+    "customaize-agent:agent-evaluation": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "d917faa450fb4e42ed8d5f99e06055359ef183cbb22bb4508ee9d87c4f9301a8"
+    },
+    "customaize-agent:apply-anthropic-skill-best-practices": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "38318b3aeff54d23fce20bcb21d07e1e34c45ed2c13ac82a30636decc2612166"
+    },
+    "customaize-agent:context-engineering": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "4de2c223730ca341661d26d5f74912bdae6ed9be1c04c1965a4be260bf1ff640"
+    },
+    "customaize-agent:create-command": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "f84ce04dc36636eb919604a7335798774215994d8e5a0c0512ec097ccf810c95"
+    },
+    "customaize-agent:create-hook": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "c43febc9d9d155308f68412c658cb96918b213f39c3621a2dc4050f009c2cdcb"
+    },
+    "customaize-agent:create-rule": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "5b1919c7f7b86b5512a8cfa2024b3ddb26d812c931552257dbfc333fd81ea372"
+    },
+    "customaize-agent:create-skill": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "4b2a9813282b42e247620b551f1384dee9ff8759f7b058e888e8689ebd347015"
+    },
+    "customaize-agent:prompt-engineering": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "c7947d29aecd064e764e6fe1671ad52014f4fd866f21e2d593316e8ecc941b12"
+    },
+    "customaize-agent:test-prompt": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "5a0c938ae63f88cd215a0e48f86bfaacb1816537099d9bfbb4d2dd29c96145c6"
+    },
+    "customaize-agent:test-skill": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "1aaf55be0f32720367255e1ff671780a7b7807f2a1685680c69d135249df5809"
+    },
+    "customaize-agent:thought-based-reasoning": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "c3b15859f7f9141a5e299c00a8cbbd84006f4e55e32ca29d9551e7fcb323fa22"
+    },
+    "ddd:setup-code-formating": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "df1fb81d0f79b249779e3bda6fdf47d44bb91ce14f22072a0da7a59c1fde5cb6"
+    },
+    "docs:update-docs": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "e9c6dfe09d6429464f335bf7d62814726ceb234b2e51ff1a68d0b1b20ffd2aaa"
+    },
+    "docs:write-concisely": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "658c23f8db12c7fc71e87c1ce81c74295b7ab6dca5a3a92232ff43339c09abf3"
+    },
+    "fpf:actualize": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "e6504a7b0d30ba16d8c948bb461d57d5c08b86b043e0654be0ce10057b00caf2"
+    },
+    "fpf:decay": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "3161141d6ee76dd7d0a03a488534db559294397ce0c7cffb5c5a91be51cc838d"
+    },
+    "fpf:propose-hypotheses": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "0984c0c3fcfc930d20b6c9536567592b244f95542b8d4521d82b42cc1ed681f1"
+    },
+    "fpf:query": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "45d902a6ba0e834f9bd7592663e0df41c3243e49ac4eb34e84fe564b31a48515"
+    },
+    "fpf:reset": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "1d1343d49e0f68a848afcb72d7e6a36f8fd8e535663d2c3c42d1513a5391adc9"
+    },
+    "fpf:status": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "a6af4d2ac1c4e3968f9d56d03e9e160f0f591d3ac6498b41f38664a5fb659e22"
+    },
+    "git:analyze-issue": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "009b578716fb65880b316bee6345ddd315a0cca2de162310abbb1ff3c75ff7de"
+    },
+    "git:attach-review-to-pr": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "eb7d0c3d32089987006f7badff77bdf00ce2ce56b07c651ace8c82e5b328e9f6"
+    },
+    "git:commit": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "7d52319ccb65ab604e3cab8de216b7866136d0618bc7f9aaf1480d35e7470925"
+    },
+    "git:compare-worktrees": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "a77f374439c5bc721f7c35d82dab6a3b499d43ea697cdaf1edb6af5e8de0d8cb"
+    },
+    "git:create-pr": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "53736b247a67131db1d8d92b559f2197700efd739a99589f11beadf851ce5119"
+    },
+    "git:create-worktree": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "c4b17cc8f8a6bf4a9c9f87b551f293d0bd009b99d46c212ab25bdc5d5b79a259"
+    },
+    "git:load-issues": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "0993dec55c511825c06696d240c470f1885ae19eefa09bb0679f591138171d3b"
+    },
+    "git:merge-worktree": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "3541bad320c83989833f7aeb7eb1af147d46d881fe69c321125e6e3575d9ce41"
+    },
+    "git:notes": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "6adafc0298de42b266356693416604fc388725a7d55db790dfa444a56e564ae0"
+    },
+    "git:worktrees": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "64d61e92a4262e6ed0f48f239ef2c141b3a77c565a844329529103a16b8c9b0d"
+    },
+    "kaizen:analyse": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "4e681a461207e9e54fc6a6f0316e752f7d9c9b8abcc7563b7cefd423d6b4e43a"
+    },
+    "kaizen:analyse-problem": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "e47f72caeb8b5c3e1bc070bbb7d701be2b801ba6637e34a02a339033b7533e32"
+    },
+    "kaizen:cause-and-effect": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "719463874fd29e49a04158f73692b51cd6e3d8e9da661ef308dbbfa2f9bfc278"
+    },
+    "kaizen:kaizen": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "3f094fd2781103ac262cb07a7f54b168e60760bd9d98a1e6aad213e82ffffffd"
+    },
+    "kaizen:plan-do-check-act": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "78aab9ec383133da9b52a1cc17c06889b361aeda301f28611b169d12186b6ecc"
+    },
+    "kaizen:root-cause-tracing": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "a7ffb110a65c8a2f5cae31ec4a8f5e0e2e44f8f032a24a6d59ceb7446ff1d2ac"
+    },
+    "kaizen:why": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "1a4b45a0016a1aaf4842f6e996fe08ce2b4b62b454db0d0414035782d8185c0a"
+    },
+    "mcp:build-mcp": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "61b70144e5d3a5ee290c6ccedeafe42e456f6896bb44be68f6e6e7f1b875eef3"
+    },
+    "mcp:setup-arxiv-mcp": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "6790eb9c22e3ad09960e2739f2e0e26885411c90b88b428703b4cfdc4dc47cb8"
+    },
+    "mcp:setup-codemap-cli": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "5e194c36396bdf1b2f18ec3d667bdb3915a4dae832eb409ae4025ac88bfe3ee7"
+    },
+    "mcp:setup-context7-mcp": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "db9fd667cb001b2d1baec8e23ffff244a434b270d480aba5246b856266225588"
+    },
+    "mcp:setup-serena-mcp": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "f879fe28dbc60950d4ea0992b1d48dc00594a0d9b68192ae8eb004d15a663080"
+    },
+    "reflexion:critique": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "cdf071f4aa71d478588af9c994acaaa357c574d1a8e858193321c5017cdbe22f"
+    },
+    "reflexion:memorize": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "046e7d9e55b80895e3241e8954f8ac412a053cca0c3d51f060971a9b46559c75"
+    },
+    "reflexion:reflect": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "350d39a25167a81378afe16708a2e454adf8649c40c2bdd6422e8c0b37308232"
+    },
+    "sadd:do-and-judge": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "74932b7c8f0709b0edc3c2168510ddd30c6d90bdb04bb02d40629fb2e43d63a6"
+    },
+    "sadd:do-competitively": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "f19e37f92befd5ff07fd37e20c41b287d1215e92758d93aadcf0ff5ad8107b98"
+    },
+    "sadd:do-in-parallel": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "f42ece1ef19c1fb8b7d3eed96a07b78a95bbd8a62b036e2353864503144224da"
+    },
+    "sadd:do-in-steps": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "711218ed19cc7f37302c7d45ef248b8d375faeb21238494f09557e9361e30d3a"
+    },
+    "sadd:judge": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "e9a9a42327e4998bcc2376daaffa21c5e3356cb7fa4bcc12c6e0b4d920595bfc"
+    },
+    "sadd:judge-with-debate": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "9a3c8f212d2fa0131210d2fcb004eca541ba12e1af010908c28203d5ddaf04bb"
+    },
+    "sadd:launch-sub-agent": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "a42c7025749edaa30f19d074c88139dec24af65d7bc9e9ecef8da8e594b7abfc"
+    },
+    "sadd:multi-agent-patterns": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "3cf5a4a6a95f3fff836a06e3b71ebb7e0ecee800891a44f8b991b89560c3f8e0"
+    },
+    "sadd:subagent-driven-development": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "5c508c6c0804607be90407748efba08976ae708b7db522a5de5ae99038c4fa56"
+    },
+    "sadd:tree-of-thoughts": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "5d319eb1842aec18fbceffbadfa15ac1f8f4cbc2762901b4e34002e79f70cd78"
+    },
+    "sdd:add-task": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "4b7f2ec756ff2b1111da06acde9d1d2263a70a379eb90f4031b8f70400ff982d"
+    },
+    "sdd:brainstorm": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "a2ccadfe836e499b723a31973f79c799260cf4b80769c64f1a96cc2adb947747"
+    },
+    "sdd:create-ideas": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "2eea4e11669be9c5d610015dfc0cc3c163a5b1ff4885797f38ff074aaa646a3d"
+    },
+    "sdd:implement": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "144cabc3ed4348fd9a10b013830855cfaae574755a9ef554c56727d1d0ecaabc"
+    },
+    "sdd:plan": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "e235141bc90a840092049c2c3f4e8764ef5b8e0360b09e2f8223def777141aab"
+    },
+    "tdd:fix-tests": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "7f0f0c253dcddd7fbb48e2ee7ac89488c06183cda0803f7dae12bbdfbb0881cf"
+    },
+    "tdd:test-driven-development": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "ad7a583061aebd9636aca2572c0a6582ececaa2c297492d31e7059331f71a06d"
+    },
+    "tdd:write-tests": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "52ad3f127e7043d768f0ad8cf86941fc11c44498892eb15c8d8ae1b5ec24b6ac"
+    },
+    "tech-stack:add-typescript-best-practices": {
+      "source": "NeoLabHQ/context-engineering-kit",
+      "sourceType": "github",
+      "computedHash": "62c8b0d0a675ee68dc85611e8b56607f90437d81c6574e9cf38991b55dcf81cf"
+    }
+  }
+}
